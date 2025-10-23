@@ -1,0 +1,490 @@
+/* ======== VARIABLES ======== */
+:root {
+    --bg-color: #f9f4ee;
+    --text-color: #7b1e1e;
+    --card-bg: #ffffff;
+    --card-inner-bg: #ebdccb;
+    --accent: #b22222;
+    --accent-hover: #7b1e1e;
+    --font-title: 'Playfair Display', serif;
+    --font-text: 'Lato', sans-serif;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1b1a17;
+    --text-color: #ebdccb;
+    --card-bg: #2b2620;
+    --card-inner-bg: #3b342d;
+    --accent: #b22222;
+    --accent-hover: #ebdccb;
+}
+
+
+/* ======== GLOBAL ======== */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-text);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+
+}
+
+/* ======== HEADER ======== */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+    position: relative;
+}
+
+.header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--font-title);
+    font-weight: 700;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.header nav a:hover {
+    color: #b22222;
+}
+
+/* ======== THEME SWITCH ======== */
+.theme-switch {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 24px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-switch .switch {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color 0.3s;
+}
+
+.theme-switch .switch::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.theme-switch input:checked+.switch {
+    background-color: #b22222;
+}
+
+.theme-switch input:checked+.switch::before {
+    transform: translateX(26px);
+}
+
+/* ======== SECTIONS ======== */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.section h1,
+.section h2,
+.section h3 {
+    font-family: var(--font-title);
+    margin-bottom: 1rem;
+}
+
+.section p,
+.section li {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* ======== TEST VINYLE ======= */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Vinyle complet */
+.vinyl {
+    position: absolute;
+    z-index: 1;
+}
+
+.record {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #111 0%, #111 70%, #222 100%);
+    /* vinyle noir */
+    box-shadow: inset -3px -3px 10px rgba(255, 255, 255, 0.1);
+    animation: spin 5s linear infinite;
+    position: relative;
+}
+
+/* Cercles concentriques pour l’effet rainures */
+.record::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle,
+            rgba(255, 255, 255, 0.05) 0px,
+            rgba(255, 255, 255, 0.05) 2px,
+            transparent 2px,
+            transparent 4px);
+}
+
+/* Label du centre du vinyle */
+.record::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #8B0000;
+    /* rouge vinyle */
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Rotation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Titre animé */
+.hero-title {
+    position: relative;
+    color: var(--text-color);
+    font-size: 5rem;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s ease-out forwards;
+    margin-top: 120px;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveLines {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 100%;
+    }
+}
+
+.note {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.2rem;
+    color: var(--accent);
+    opacity: 0.6;
+    pointer-events: none;
+    animation: floatNote 10s linear infinite;
+}
+
+@keyframes floatNote {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* ======== ABOUT SECTION ======== */
+/* ======== ABOUT CARD STYLE ======== */
+.about-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 1rem;
+}
+
+.about-card .card {
+    background-color: var(--card-inner-bg);
+    color: var(--text-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 90%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.about-card .profile-picture {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--text-color);
+    margin: 0 auto 1rem;
+    transition: border-color 0.3s;
+}
+
+.about-card .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-card .name {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.about-card .role {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+
+.about-card .bio {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* ======== ICONS ======== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons a {
+    background-color: var(--accent);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-hover);
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+/* ======== BUTTONS ======== */
+.about-card .links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.about-card .btn {
+    background-color: var(--accent);
+    color: var(--card-inner-bg);
+    text-decoration: none;
+    padding: 0.7rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.about-card .btn:hover {
+    background-color: var(--accent-hover);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+}
+
+
+/* ======== ICONS ======== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons a {
+    background-color: #b22222;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background-color: #7b1e1e;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+/* ======== BUTTONS ======== */
+.about-card .links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.about-card .btn {
+    background-color: #7b1e1e;
+    color: #f9f4ee;
+    text-decoration: none;
+    padding: 0.7rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.about-card .btn:hover {
+    background-color: #b22222;
+    transform: translateY(-2px);
+}
+
+
+/* ======== PROJECTS SECTION ======== */
+.section.projects {
+    padding: 4rem 2rem;
+}
+
+.section.projects h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.project-card .icon-wrapper img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.project-card .icon-wrapper:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.project-card h3 {
+    font-family: var(--font-title);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.project-card p {
+    font-family: var(--font-text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
