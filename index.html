@@ -2,20 +2,19 @@
 <html lang="fr" data-theme="light">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asahelle - Intégratrice web</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asahelle - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+
     <header class="header">
         <nav>
             <a href="#about">About</a>
@@ -24,96 +23,126 @@
         </nav>
 
         <div class="theme-switch">
-            <input type="checkbox" id="theme-toggle" />
+            <input type="checkbox" id="theme-toggle">
             <label for="theme-toggle" class="switch"></label>
         </div>
     </header>
 
     <main>
-        <section id="home" class="section home">
+        <section id="home" class="section hero-section">
             <div class="hero">
                 <h1 class="hero-title">Asahelle Portfolio</h1>
                 <div class="vinyl">
                     <div class="record"></div>
                 </div>
-
-                <!-- petites notes -->
-                <div class="note" style="left: 10%; animation-delay: 0s;">♪</div>
-                <div class="note" style="left: 30%; animation-delay: 2s;">♫</div>
-                <div class="note" style="left: 50%; animation-delay: 4s;">♪</div>
-                <div class="note" style="left: 70%; animation-delay: 1s;">♫</div>
-                <div class="note" style="left: 90%; animation-delay: 3s;">♪</div>
-
+                <div class="note" style="left:10%; animation-delay:0s">♪</div>
+                <div class="note" style="left:30%; animation-delay:2s">♫</div>
+                <div class="note" style="left:50%; animation-delay:4s">♪</div>
+                <div class="note" style="left:70%; animation-delay:1s">♫</div>
+                <div class="note" style="left:90%; animation-delay:3s">♪</div>
             </div>
         </section>
-        <section id="about" class="section about">
-            <section id="about" class="section about-card">
+
+        <section id="about" class="section about-section">
+            <div class="about-wrapper">
+                <!-- Carte -->
                 <div class="card">
                     <div class="profile-picture">
                         <img src="https://zupimages.net/up/25/43/04cx.jpg" alt="Photo de profil Asahelle">
                     </div>
-
                     <h2 class="name">Asahelle</h2>
-                    <p class="role">Intégratrice Web · Passionnée de design</p>
-
-                    <p class="bio">
-                        J’aime créer des expériences web élégantes et chaleureuses. <br>
-                        Actuellement en formation chez OpenClassrooms.
-                    </p>
-
+                    <p class="role">Intégratrice Web · Game Master</p>
+                    <p class="bio">Passionnée de code, de graphisme et de rpg depuis presque 10 ans, bienvenue dans mon
+                        petit univers ~</p>
                     <div class="social-icons">
-                        <a href="https://github.com/ton-github" target="_blank" aria-label="GitHub">
-                            <img src="icons/github.svg" alt="GitHub">
-                        </a>
-                        <a href="https://www.linkedin.com/in/ton-linkedin" target="_blank" aria-label="LinkedIn">
-                            <img src="icons/linkedin.svg" alt="LinkedIn">
-                        </a>
-                        <a href="fichiers/CV_Asahelle.pdf" download aria-label="Télécharger CV">
-                            <img src="icons/cv.svg" alt="CV">
-                        </a>
+                        <a href="https://github.com/CynthiaCG-2202" target="_blank"><img src="./images/github.png"
+                                alt="GitHub"></a>
+                        <a href="https://www.linkedin.com/in/cynthia-crosa-gravez-5838462b5" target="_blank"><img
+                                src="./images/linkedin.png" alt="LinkedIn"></a>
                     </div>
-
                     <div class="links">
-                        <a href="#projects" class="btn">Projets</a>
                         <a href="fichiers/CV_Asahelle.pdf" download class="btn">Télécharger CV</a>
-                        <a href="#contact" class="btn">Contact</a>
                     </div>
                 </div>
-            </section>
 
-            <section id="projects" class="section projects">
-                <h2>My Projects</h2>
-                <div class="cards">
-
-                    <div class="project-card">
-                        <a href="#" target="_blank" class="icon-wrapper" style="background-color:#770a98ff;">
-                            <img src="/icons/OMF.png" alt="Oh my food !" />
-                        </a>
-                        <h3>Oh my food !</h3>
-                        <p>Site qui regroupe plusieurs restaurants ainsi que leurs menus.</p>
+                <!-- Timeline -->
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Oct. 2025 — Game Master</h4>
+                            <p>Actuellement Game Master pour un complexe d'établissements d'escape et VR.</p>
+                        </div>
                     </div>
-
-                    <div class="project-card">
-                        <a href="#" target="_blank" class="icon-wrapper" style="background-color:#90be6d;">
-                            <img src="/icons/escape.svg" alt="Escape Game" />
-                        </a>
-                        <h3>Escape Game</h3>
-                        <p>Jeu interactif développé en HTML/CSS/JS pour un escape game en ligne.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Mars 2025 — Formation OC</h4>
+                            <p>Début de la formation d'intégratrice web chez OpenClassrooms.</p>
+                        </div>
                     </div>
-
-                    <div class="project-card">
-                        <a href="#" target="_blank" class="icon-wrapper" style="background-color:#f94144;">
-                            <img src="/icons/api.svg" alt="API Kasa" />
-                        </a>
-                        <h3>API Kasa</h3>
-                        <p>Application utilisant une API RESTful pour afficher des logements.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2022 - 2024 — Responsable accueil</h4>
+                            <p>Hôtesse de caisse et responsable d'accueil d'une grande surface.</p>
+                        </div>
                     </div>
-
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2022 — Diplômes</h4>
+                            <p>Obtention du bac et du CEC niv. B1/B2.</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <h2>My Projects</h2>
+            <div class="cards">
+                <div class="project-card">
+                    <a href="#" class="icon-wrapper" style="background-color:#770a98ff;"><img src="/icons/OMF.png"
+                            alt="Oh my food !"></a>
+                    <h3>Oh my food !</h3>
+                    <p>Site qui regroupe plusieurs restaurants ainsi que leurs menus.</p>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="icon-wrapper" style="background-color:#90be6d;"><img src="/icons/escape.svg"
+                            alt="Escape Game"></a>
+                    <h3>Escape Game</h3>
+                    <p>Jeu interactif développé en HTML/CSS/JS pour un escape game en ligne.</p>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="icon-wrapper" style="background-color:#f94144;"><img src="/icons/api.svg"
+                            alt="API Kasa"></a>
+                    <h3>API Kasa</h3>
+                    <p>Application utilisant une API RESTful pour afficher des logements.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2>Contactez-moi</h2>
+            <form action="https://formspree.io/f/xpwyvnag" method="POST" class="contact-form">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required placeholder="Votre nom">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Votre email">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                <button type="submit" class="btn submit-btn">
+                    <span class="btn-text">Envoyer</span>
+                    <span class="vinyl-loader"></span>
+                </button>
+                <p class="form-feedback"></p>
+            </form>
+        </section>
     </main>
 
-    <script src="theme.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
