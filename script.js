@@ -62,3 +62,27 @@ form.addEventListener("submit", (e) => {
     btn.querySelector(".btn-text").textContent = "Envoyer";
   });
 });
+
+const projectCards = document.querySelectorAll('.project-card');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = card.getAttribute('data-modal');
+                document.getElementById(modalId).classList.add('open');
+            });
+        });
+
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.closest('.modal').classList.remove('open');
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            modals.forEach(modal => {
+                if (e.target === modal) modal.classList.remove('open');
+            });
+        });

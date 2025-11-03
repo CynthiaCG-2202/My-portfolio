@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="./images/vinyle.png" />
+
     <title>Asahelle - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,82 +47,131 @@
 
         <section id="about" class="section about-section">
             <div class="about-wrapper">
-                <!-- Carte -->
-                <div class="card">
-                    <div class="profile-picture">
-                        <img src="https://zupimages.net/up/25/43/04cx.jpg" alt="Photo de profil Asahelle">
-                    </div>
-                    <h2 class="name">Asahelle</h2>
-                    <p class="role">Intégratrice Web · Game Master</p>
-                    <p class="bio">Passionnée de code, de graphisme et de rpg depuis presque 10 ans, bienvenue dans mon
-                        petit univers ~</p>
-                    <div class="social-icons">
-                        <a href="https://github.com/CynthiaCG-2202" target="_blank"><img src="./images/github.png"
-                                alt="GitHub"></a>
-                        <a href="https://www.linkedin.com/in/cynthia-crosa-gravez-5838462b5" target="_blank"><img
-                                src="./images/linkedin.png" alt="LinkedIn"></a>
-                    </div>
-                    <div class="links">
-                        <a href="fichiers/CV_Asahelle.pdf" download class="btn">Télécharger CV</a>
-                    </div>
+                <div class="about-image">
+                    <img src="https://zupimages.net/up/25/44/o040.png" alt="Portrait d'Asahelle">
                 </div>
+                <div class="about-text">
+                    <h3>Asahelle</h3>
+                    <p class="about-role">Intégratrice web & Game Master</p>
+                    <p>
+                        Bio à rédiger ici
+                    </p>
 
-                <!-- Timeline -->
-                <div class="timeline">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Oct. 2025 — Game Master</h4>
-                            <p>Actuellement Game Master pour un complexe d'établissements d'escape et VR.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Mars 2025 — Formation OC</h4>
-                            <p>Début de la formation d'intégratrice web chez OpenClassrooms.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>2022 - 2024 — Responsable accueil</h4>
-                            <p>Hôtesse de caisse et responsable d'accueil d'une grande surface.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>2022 — Diplômes</h4>
-                            <p>Obtention du bac et du CEC niv. B1/B2.</p>
-                        </div>
+                    <div class="about-skills">
+                        <span>HTML</span>
+                        <span>CSS / SASS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Photoshop</span>
+                        <span>Design graphique</span>
                     </div>
                 </div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Oct. 2025 — Game Master</h4>
+                        <p>Actuellement Game Master pour un complexe d'établissements d'escape et VR.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Mars 2025 — Formation OC</h4>
+                        <p>Début de la formation d'intégratrice web chez OpenClassrooms.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2022 - 2024 — Responsable accueil</h4>
+                        <p>Hôtesse de caisse et responsable d'accueil d'une grande surface.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2022 — Diplômes</h4>
+                        <p>Obtention du bac et du CEC niv. B1/B2.</p>
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
 
         <section id="projects" class="section projects-section">
-            <h2>My Projects</h2>
+            <h2>Projects</h2>
             <div class="cards">
-                <div class="project-card">
-                    <a href="#" class="icon-wrapper" style="background-color:#770a98ff;"><img src="/icons/OMF.png"
-                            alt="Oh my food !"></a>
-                    <h3>Oh my food !</h3>
-                    <p>Site qui regroupe plusieurs restaurants ainsi que leurs menus.</p>
+                <div class="project-card" data-modal="modal1">
+                    <div class="project-image">
+                        <img src="https://zupimages.net/up/25/44/t6eb.png" alt="Aperçu du projet Oh My Food">
+                    </div>
+                    <div class="project-info">
+                        <h3>Oh My Food!</h3>
+                        <div class="about-skills">
+                            <span>HTML</span>
+                            <span>CSS/SASS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive Design</span>
+                        </div>
+                        <p>Site qui regroupe plusieurs restaurants ainsi que leurs menus.</p>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <a href="#" class="icon-wrapper" style="background-color:#90be6d;"><img src="/icons/escape.svg"
-                            alt="Escape Game"></a>
-                    <h3>Escape Game</h3>
-                    <p>Jeu interactif développé en HTML/CSS/JS pour un escape game en ligne.</p>
+
+                <div class="project-card" data-modal="modal2">
+                    <div class="project-image">
+                        <img src="https://zupimages.net/up/25/44/0bvt.png" alt="Aperçu du projet Argentbank">
+                    </div>
+                    <div class="project-info">
+                        <h3>Argentbank</h3>
+                        <div class="about-skills">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Redux</span>
+                            <span>API Swagger</span>
+                        </div>
+                        <p>Intégration d'API et d'éléments de connexion et de changement d'username.</p>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <a href="#" class="icon-wrapper" style="background-color:#f94144;"><img src="/icons/api.svg"
-                            alt="API Kasa"></a>
-                    <h3>API Kasa</h3>
-                    <p>Application utilisant une API RESTful pour afficher des logements.</p>
+
+                <div class="project-card" data-modal="modal3">
+                    <div class="project-image">
+                        <img src="https://zupimages.net/up/25/44/3hu2.png" alt="Aperçu du projet Kasa">
+                    </div>
+                    <div class="project-info">
+                        <h3>Kasa</h3>
+                        <div class="about-skills">
+                            <span>HTML</span>
+                            <span>SASS</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Responsive Design</span>
+                        </div>
+                        <p>Application de logements à louer.</p>
+                    </div>
                 </div>
+
+                <div class="project-card" data-modal="modal4">
+                    <div class="project-image">
+                        <img src="https://zupimages.net/up/25/45/70g7.png" alt="Aperçu du projet Nina Carducci">
+                    </div>
+                    <div class="project-info">
+                        <h3>Nina Carducci</h3>
+                        <div class="about-skills">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Optimisation et référencement</span>
+                            <span>Score Lighthouse</span>
+                        </div>
+                        <p>Optimisation d'un site de photographe.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -141,6 +192,48 @@
             </form>
         </section>
     </main>
+    <footer>
+        <p>Portfolio codé avec passion et une dose de café ☕︎</p>
+    </footer>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Oh My Food!</h2>
+            <p>
+                résumé & images
+            </p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>ArgentBank</h2>
+            <p>
+                résumé & images
+            </p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Kasa</h2>
+            <p>
+                résumé & images
+            </p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Nina Carducci</h2>
+            <p>
+                résumé & images
+            </p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
