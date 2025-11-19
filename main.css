@@ -150,7 +150,7 @@ body {
   font-family: Hurricane;
   font-size: 7rem;
   color: var(--accent);
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   z-index: 3;
   opacity: 0;
   transform: translateY(50px);
@@ -492,6 +492,7 @@ body {
 .project-info {
   padding: 1rem 1.2rem 1.5rem;
   color: var(--text-color);
+  height: 300px;
 }
 
 .project-info h3 {
@@ -504,6 +505,32 @@ body {
   font-family: 'Lato', sans-serif;
   opacity: 0.85;
   line-height: 1.5;
+}
+
+a.github-link {
+  text-decoration: none;
+  background-color: var(--accent);
+  color: var(--card-inner-bg);
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+a.github-link:hover {
+  background-color: var(--accent-hover);
+  color: var(--card-inner-bg);
+}
+
+.want-more {
+  background-color: var(--accent);
+  color: var(--card-inner-bg);
+  text-align: center;
+  padding: 10px;
+}
+
+.want-more:hover {
+  background-color: var(--accent-hover);
+  font-weight: bold;
 }
 
 /* ===============================  MODALES ================================= */
@@ -532,7 +559,8 @@ body {
   border-radius: 12px;
   padding: 2rem;
   max-width: 500px;
-  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
   position: relative;
   text-align: center;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.05);
@@ -557,7 +585,7 @@ body {
 .modal-content h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--accent-color, #7b1e1e);
+  color: var(--accent-color);
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -567,6 +595,66 @@ body {
   font-family: 'Lato', sans-serif;
   opacity: 0.9;
 }
+
+/* Scrollbar pour Chrome, Edge et Safari */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+  border: 2px solid var(--bg-color);
+  /* espace autour du curseur */
+}
+
+/* Scrollbar pour Firefox */
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg-color);
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.gallery-item {
+  background: var(--card-inner-bg);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 0.8rem;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-3px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-item p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.85;
+}
+
 
 .close-modal {
   position: absolute;
@@ -682,3 +770,95 @@ footer {
 }
 
 /* =============================== MEDIA QUERIES ================================= */
+
+@media (max-width: 768px) {
+
+  .section {
+    padding: 2em;
+  }
+
+  .record {
+    width: 200px;
+    height: 200px;
+  }
+
+  .header nav a {
+    font-size: 15px;
+  }
+
+  .hero-title {
+    font-size: 45px;
+    margin-top: 112px;
+  }
+
+  .hero-subtitle {
+    font-size: 40px;
+    margin-top: 183px;
+    margin-left: -44px;
+  }
+
+  .about-wrapper {
+    gap: 0rem;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-skills {
+    justify-content: center;
+  }
+
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .timeline-line {
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+  }
+
+  .timeline-item {
+    margin: 2rem 0;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -23px;
+    top: 0;
+  }
+
+  .timeline-content {
+    margin-left: 1.5rem;
+  }
+
+  .timeline::before {
+    content: "↓";
+    left: 0px;
+    top: -7px;
+    transform: none;
+    font-size: 1.4rem;
+  }
+
+  .theme-switch .switch {
+    margin-top: 45px;
+  }
+
+  .section.projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

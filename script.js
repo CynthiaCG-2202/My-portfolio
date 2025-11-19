@@ -19,7 +19,7 @@ const sections = document.querySelectorAll('.section');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting){
+    if (entry.isIntersecting) {
       entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
@@ -48,7 +48,7 @@ form.addEventListener("submit", (e) => {
     headers: { 'Accept': 'application/json' }
   }).then(response => {
     vinyl.style.display = "none";
-    if(response.ok){
+    if (response.ok) {
       feedback.textContent = "Message envoyé ! Merci 🌸";
       form.reset();
       btn.querySelector(".btn-text").textContent = "Envoyer";
@@ -63,26 +63,26 @@ form.addEventListener("submit", (e) => {
   });
 });
 
-const projectCards = document.querySelectorAll('.project-card');
-        const modals = document.querySelectorAll('.modal');
-        const closeButtons = document.querySelectorAll('.close-modal');
+const projectCards = document.querySelectorAll('.want-more');
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.close-modal');
 
-        projectCards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                e.preventDefault();
-                const modalId = card.getAttribute('data-modal');
-                document.getElementById(modalId).classList.add('open');
-            });
-        });
+projectCards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.preventDefault();
+    const modalId = card.getAttribute('data-modal');
+    document.getElementById(modalId).classList.add('open');
+  });
+});
 
-        closeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.closest('.modal').classList.remove('open');
-            });
-        });
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.modal').classList.remove('open');
+  });
+});
 
-        window.addEventListener('click', (e) => {
-            modals.forEach(modal => {
-                if (e.target === modal) modal.classList.remove('open');
-            });
-        });
+window.addEventListener('click', (e) => {
+  modals.forEach(modal => {
+    if (e.target === modal) modal.classList.remove('open');
+  });
+});
