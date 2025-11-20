@@ -6,6 +6,8 @@
   --accent: #29422C;
   --accent-hover: #778873;
   --about-bg: #e6e8d3;
+  --link-bg: #29422c;
+  --link-accent: #778873;
   --font-title: 'Playfair Display', serif;
   --font-text: 'Lato', sans-serif;
 }
@@ -17,6 +19,8 @@
   --accent: #f67575;
   --accent-hover: #9d1c1c;
   --about-bg: #252320;
+  --link-bg: #950909;
+  --link-accent: #f67575;
 }
 
 /* =============================== GLOBAL ================================= */
@@ -227,17 +231,50 @@ body {
   animation: floatNote 10s linear infinite;
 }
 
-.note1::before { content: "♪"; }
-.note2::before { content: "♫"; }
-.note3::before { content: "♪"; }
-.note4::before { content: "♫"; }
-.note5::before { content: "♪"; }
+.note1::before {
+  content: "♪";
+}
 
-.note1 { left: 10%; animation-delay: 0s; }
-.note2 { left: 30%; animation-delay: 2s; }
-.note3 { left: 50%; animation-delay: 4s; }
-.note4 { left: 70%; animation-delay: 1s; }
-.note5 { left: 90%; animation-delay: 3s; }
+.note2::before {
+  content: "♫";
+}
+
+.note3::before {
+  content: "♪";
+}
+
+.note4::before {
+  content: "♫";
+}
+
+.note5::before {
+  content: "♪";
+}
+
+.note1 {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.note2 {
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.note3 {
+  left: 50%;
+  animation-delay: 4s;
+}
+
+.note4 {
+  left: 70%;
+  animation-delay: 1s;
+}
+
+.note5 {
+  left: 90%;
+  animation-delay: 3s;
+}
 
 @keyframes floatNote {
   0% {
@@ -304,7 +341,8 @@ body {
   font-size: 1rem;
 }
 
-.about-text h3 {
+.about-text h3,
+h4 {
   font-family: var(--font-title);
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
@@ -423,10 +461,11 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-content h4 {
+.timeline-content h5 {
   margin: 0;
   font-family: var(--font-title);
   color: var(--accent);
+  font-size: 1em;
 }
 
 
@@ -700,8 +739,10 @@ a.github-link:hover {
 .contact-section {
   padding: 4rem 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
+  gap: 40px;
 }
 
 .contact-section h2 {
@@ -772,6 +813,68 @@ a.github-link:hover {
   color: var(--accent);
   text-align: center;
 }
+
+.buttons-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.btn-animated {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: var(--link-bg);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  position: relative;
+}
+
+.btn-animated:hover {
+  background-color: var(--link-accent);
+  transform: translateY(-2px);
+}
+
+.btn-animated .icon {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.icon img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+}
+
+.btn-animated:hover .icon {
+  transform: translateY(-3px) rotate(10deg);
+}
+
+/* Optionnel : effet “pulse” pour GitHub */
+.btn-animated:nth-child(3):hover .icon {
+  animation: pulse 0.5s alternate infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
 
 /* ================================ FOOTER ==================================== */
 
