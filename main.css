@@ -1,9 +1,9 @@
 /*===============================VARIABLES=================================*/
 :root {
   --bg-color: #F1F3E0;
-  --text-color: #728a6b;
+  --text-color: #4A5945;
   --card-inner-bg: #fbfff1;
-  --accent: #5b9461;
+  --accent: #29422C;
   --accent-hover: #778873;
   --about-bg: #e6e8d3;
   --font-title: 'Playfair Display', serif;
@@ -14,8 +14,8 @@
   --bg-color: #1b1a17;
   --text-color: #ebdccb;
   --card-inner-bg: #3b342d;
-  --accent: #b22222;
-  --accent-hover: #700d0d;
+  --accent: #f67575;
+  --accent-hover: #9d1c1c;
   --about-bg: #252320;
 }
 
@@ -155,8 +155,9 @@ body {
   opacity: 0;
   transform: translateY(50px);
   animation: slideIn 1s ease-out forwards;
-  margin-top: 390px;
+  margin-top: 400px;
   margin-left: -122px;
+  font-weight: unset;
 }
 
 @keyframes slideIn {
@@ -225,6 +226,18 @@ body {
   pointer-events: none;
   animation: floatNote 10s linear infinite;
 }
+
+.note1::before { content: "♪"; }
+.note2::before { content: "♫"; }
+.note3::before { content: "♪"; }
+.note4::before { content: "♫"; }
+.note5::before { content: "♪"; }
+
+.note1 { left: 10%; animation-delay: 0s; }
+.note2 { left: 30%; animation-delay: 2s; }
+.note3 { left: 50%; animation-delay: 4s; }
+.note4 { left: 70%; animation-delay: 1s; }
+.note5 { left: 90%; animation-delay: 3s; }
 
 @keyframes floatNote {
   0% {
